@@ -1,0 +1,21 @@
+<md-content layout-xs="column" layout="column">
+  <div class="pg-content" layout="column" flex>
+    <md-content class="page-login" layout="row" layout-align="space-around" layout-padding="layout-padding" ng-cloak="ng-cloak">
+         <form name="Form" >
+           <md-input-container class="md-block">
+             <label>Access Token</label>
+             <input type="text" name="username" ng-model="otlogin" placeholder="token" required=""/>
+           </md-input-container>
+
+           <md-input-container class="md-block last">
+             <md-button class="md-raised md-primary" ng-click="dc.proceedtoreg()">&nbsp; Proceed &nbsp;</md-button>
+           </md-input-container>
+           <p style="font-size:.8em; width: 100%; text-align: center;">
+                Note : Please provide the token given while booking the deed registration.
+           </p>
+         </form>
+   </md-content>
+
+    </div>
+  </div>
+</md-content>

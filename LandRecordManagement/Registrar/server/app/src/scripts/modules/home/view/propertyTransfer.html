@@ -1,0 +1,89 @@
+<md-content layout-xs="column" layout="column">
+  <div class="pg-content" layout="column" flex>
+
+<form name="Form" ng-submit="login()">
+    <md-subheader class="md-primary">Enter Biometrics</md-subheader>
+    <md-content>
+      <p style="font-size:.8em; width: 100%; text-align: center;">
+        Some mechanism to accept biometrics needs to be added.
+      </p>
+      <md-divider md-inset></md-divider>
+    </md-content>
+
+    <md-subheader class="md-primary">Registration Payment</md-subheader>
+    <md-content>
+      <p style="font-size:.8em; width: 100%; text-align: center;">
+        Click here to pay - <a href="javascript:void(0)" target="_blank">pay</a>
+      </p>
+      <md-divider md-inset></md-divider>
+    </md-content>
+
+
+    <md-subheader class="md-primary">Encumbrance</md-subheader>
+    <md-content layout="row" layout-padding layout-align="center center">
+      <md-checkbox ng-model="revisedModel.enc" layout-align="space-around" layout-padding="layout-padding" ng-checked="true">
+        Add Encumbrance
+      </md-checkbox>
+    </md-content>
+    <p style="font-size:.8em; width: 100%; text-align: center;">
+      Note : Applicable only in case of buyer is wishing to take a loan.
+    </p>
+
+    <md-subheader class="md-primary">Buyer Details</md-subheader>
+    <md-content layout-padding>
+      <div>
+            <form name="transferForm">
+
+              <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                  <label>First Name</label>
+                  <input ng-model="trreq.fname">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-xs>
+                  <label>Last Name</label>
+                  <input ng-model="trreq.lname">
+                </md-input-container>
+              </div>
+
+              <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Mobile</label>
+                  <input ng-model="trreq.mob">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Aadhar</label>
+                  <input ng-model="trreq.aadhar">
+                </md-input-container>
+              </div>
+            </div>
+
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>PAN</label>
+                <input ng-model="trreq.pan">
+              </md-input-container>
+
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Deed Date</label>
+                <input ng-model="trreq.deeddate">
+              </md-input-container>
+
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Reg Location</label>
+                <input ng-model="trreq.regloc">
+              </md-input-container>
+            </div>
+          </div>
+
+            <div layout="row">
+              <md-button class="md-primary" type="submit" ng-click="pt.updateRecord()" ng-disabled="disableButton">Transfer Ownership</md-button>
+            </div>
+          </form>
+    </md-content>
+
+  </form>
+  </div>
+  </div>
+</md-content>

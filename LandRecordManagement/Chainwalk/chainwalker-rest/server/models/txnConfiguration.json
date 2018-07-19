@@ -1,0 +1,27 @@
+{
+  "name": "TxnConfiguration",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "TxnConfiguration": {
+      "type": "object",
+      "default":  [{
+          "ChName": "mychannel",
+          "ChainCodeId": "sampleChainid",
+          "PreOrPost": "pre",
+          "ActiveInd": true,
+          "TxnType": "invoke",
+          "TxnName" : "add"
+      }],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "hidden": ["id"]
+}

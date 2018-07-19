@@ -1,0 +1,26 @@
+{
+  "name": "Chainwalker",
+  "version": "1.0.0-beta",
+  "licence": "copyrights 2017 IBM India Pvt Ltd",
+  "repository": {
+    "type": "git",
+    "url": "https://github.ibm.com/GovernedBlockchain/chainwalker"
+  },
+  "main": "server.js",
+  "keywords": [
+    "bloackchain",
+    "governance",
+    "master data"
+  ],
+  "scripts": {
+     "test": "npm run lint && NODE_ENV=test ../node_modules/.bin/karma start",
+     "lint": "../node_modules/.bin/eslint app/src/scripts/ngApp",
+     "dev": "../node_modules/.bin/webpack-dev-server --content-base app/src",
+     "build-dev": "NODE_ENV=test node ../node_modules/.bin/webpack --watch",
+     "build": "rm -rf app/build && mkdir app/build && NODE_ENV=test node ../node_modules/.bin/webpack && cp app/src/index.html app/build/index.html && cp -r app/src/images app/build/",
+     "build-prod": "rm -rf app/build && NODE_ENV=production node ../node_modules/.bin/webpack --config ./webpack.production.config.js && cp app/src/index.html app/build/index.html && cp -r app/src/images app/build/"
+   },
+  "engines": {
+    "node": ">=6.10.0"
+  }
+}

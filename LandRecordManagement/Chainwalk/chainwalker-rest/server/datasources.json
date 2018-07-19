@@ -1,0 +1,125 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "fabricDataSource": {
+    "name": "fabricDataSource",
+    "connector": "fabric",
+    "keyStoreFile": "/tmp/fabric-client-kvs",
+    "AUSER": {
+      "username": "User1@peerOrg1",
+      "mspid": "org1MSP",
+      "cryptoContent": {
+        "privateKey":"artifacts/crypto-config/peerOrganizations/peerOrg1/users/User1@peerOrg1/msp/keystore/8f793d183bf0e19b416cf6f533a7868d6cfa23c3e6360870cc2c4e2b9105b611_sk",
+        "signedCert":"artifacts/crypto-config/peerOrganizations/peerOrg1/users/User1@peerOrg1/msp/signcerts/User1@peerOrg1-cert.pem"
+      }
+    },
+    "fabricUser": {
+      "username": "Admin@peerOrg1",
+      "mspid": "org1MSP",
+      "cryptoContent": {
+        "privateKey":"artifacts/crypto-config/peerOrganizations/peerOrg1/users/Admin@peerOrg1/msp/keystore/6d1194a746a3e1f09ec6ccfe8e772bdf294e481147ace877c331beeca3a717c3_sk",
+        "signedCert":"artifacts/crypto-config/peerOrganizations/peerOrg1/users/Admin@peerOrg1/msp/signcerts/Admin@peerOrg1-cert.pem"
+      }
+    },
+    "orderers": [{
+        "url":"grpc://0.0.0.0:7050",
+        "CACertFile":"artifacts/crypto-config/ordererOrganizations/ordererOrg1/ca/ca.ordererOrg1-cert.pem",
+        "publicCertFile":"artifacts/crypto-config/ordererOrganizations/ordererOrg1/orderers/orderer.ordererOrg1/msp/signcerts/orderer.ordererOrg1-cert.pem",
+        "hostname":"orderer.ordererOrg1"
+      }],
+    "org1":{
+          "name":"org1",
+          "mspid": "org1MSP",
+          "CACertFile":"artifacts/crypto-config/peerOrganizations/peerOrg1/ca/ca.peerOrg1-cert.pem",
+          "ca" :{
+            "url":"http://0.0.0.0:7054",
+            "name": "ca-org1"
+          },
+          "peers":[{
+              "name":"peer1",
+               "requestURL":"grpc://0.0.0.0:7051",
+               "eventURL":"grpc://0.0.0.0:7053",
+               "orgIndex":"0",
+               "publicCertFile":"artifacts/crypto-config/peerOrganizations/peerOrg1/peers/peer0.peerOrg1/msp/signcerts/peer0.peerOrg1-cert.pem",
+               "hostname":"peer0Org1"
+             },
+             {
+                "name":"peer2",
+                "requestURL":"grpc://0.0.0.0:7056",
+                "eventURL":"grpc://0.0.0.0:7058",
+                "orgIndex":"0",
+                "publicCertFile":"artifacts/crypto-config/peerOrganizations/peerOrg1/peers/peer1.peerOrg1/msp/signcerts/peer1.peerOrg1-cert.pem",
+                "hostname":"peer1Org1"
+              }]
+        },
+      "org2":{
+          "name":"org2",
+          "mspid":"org2MSP",
+          "CACertFile":"artifacts/crypto-config/peerOrganizations/peerOrg2/ca/ca.peerOrg2-cert.pem",
+          "ca" :{
+            "url":"http://0.0.0.0:8054",
+            "name": "ca-org2"
+          },
+          "peers":[{
+               "name": "peer1",
+               "requestURL":"grpc://0.0.0.0:8051",
+               "eventURL":"grpc://0.0.0.0:8053",
+               "orgIndex":"1",
+               "publicCertFile":"artifacts/crypto-config/peerOrganizations/peerOrg2/peers/peer0.peerOrg2/msp/signcerts/peer0.peerOrg2-cert.pem",
+               "hostname":"peer0Org2"
+             },
+             {
+                "name":"peer2",
+                "requestURL":"grpc://0.0.0.0:8056",
+                "eventURL":"grpc://0.0.0.0:8058",
+                "orgIndex":"1",
+                "publicCertFile":"artifacts/crypto-config/peerOrganizations/peerOrg2/peers/peer1.peerOrg2/msp/signcerts/peer1.peerOrg2-cert.pem",
+                "hostname":"peer1Org2"
+              }]
+        },
+    "peers_secure": [
+      { "requestURL":"grpcs://0.0.0.0:7051", "eventURL":"grpcs://0.0.0.0:7053", "orgIndex":"0", "publicCertFile":"artifacts/crypto-config/peerOrganizations/peerOrg1/users/Admin@peerOrg1/msp/admincerts/Admin@peerOrg1-cert.pem", "hostname":"peer0Org1" },
+      { "requestURL":"grpcs://0.0.0.0:7056", "eventURL":"grpcs://0.0.0.0:7058", "orgIndex":"0", "publicCertFile":"artifacts/crypto-config/peerOrganizations/peerOrg1/users/Admin@peerOrg1/msp/admincerts/Admin@peerOrg1-cert.pem", "hostname":"peer1Org1" },
+      { "requestURL":"grpcs://0.0.0.0:8051", "eventURL":"grpcs://0.0.0.0:8053", "orgIndex":"1", "publicCertFile":"artifacts/crypto-config/peerOrganizations/peerOrg2/users/Admin@peerOrg2/msp/admincerts/Admin@peerOrg2-cert.pem", "hostname":"peer0Org2" },
+      { "requestURL":"grpcs://0.0.0.0:8056", "eventURL":"grpcs://0.0.0.0:8058", "orgIndex":"1", "publicCertFile":"artifacts/crypto-config/peerOrganizations/peerOrg2/users/Admin@peerOrg2/msp/admincerts/Admin@peerOrg2-cert.pem", "hostname":"peer1Org2" }
+    ],
+    "orderers_secure": [
+      { "url":"grpcs://0.0.0.0:7050", "CACertFile":"artifacts/crypto-config/ordererOrganizations/ordererOrg1/ca/ca.ordererOrg1-cert.pem", "publicCertFile":"artifacts/crypto-config/ordererOrganizations/ordererOrg1/orderers/orderer.ordererOrg1/msp/signcerts/orderer.ordererOrg1-cert.pem", "hostname":"orderer.ordererOrg1"}
+    ],
+    "channels": [
+      { "name":"mychannel",
+        "peersIndex":{
+          "org1": [0,1],
+          "org2": [0,1]
+        },
+        "orderersIndex":[0]
+      }
+    ],
+    "channels_first_network": [
+      { "name":"mychannel", "peersIndex":[0,1,2,3], "orderersIndex":[0] }
+    ]
+  },
+  "chainwalkerDataSource":{
+    "name": "chainwalker",
+    "batchSize" : 500,
+    "connector": "chainwalker",
+    "chainName":"fabric-client1",
+    "channelName":"mychannel",
+    "chaincodeVersion": "v3",
+    "chaincodePath":"github.com/pmechainwalk",
+    "modelfilepath": "model",
+    "ipfs_api_ip" : "http://localhost",
+    "ipfs_api_port" : 5001,
+    "ipfs_gateway_port" : 8080,
+    "adminusers": [
+      {
+        "username" : "admin",
+        "password": "adminpw",
+        "org1_msppath": "artifacts/crypto-config/peerOrganizations/peerOrg1/users/Admin@peerOrg1/msp",
+        "org2_msppath": "artifacts/crypto-config/peerOrganizations/peerOrg2/users/Admin@peerOrg2/msp"
+      }
+    ]
+  }
+}

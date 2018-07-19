@@ -1,0 +1,27 @@
+{
+  "name": "args",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "args": {
+      "type": [
+        "string"
+      ],
+      "required": true,
+      "description": "An array of arguements"
+    },
+    "fcn": {
+      "type": "string",
+      "required": true,
+      "description": "A function name relevant to the chaincode"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "hidden": ["id"]
+}

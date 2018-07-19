@@ -1,0 +1,51 @@
+{
+  "Entity": {
+    "EntName": "Entity",
+    "EntId": "63_232_877",
+    "SubEntities": [{
+        "bhoomiDetails": {
+          "district": "Udupi",
+          "taluk": "Kundapura",
+          "hobli": "Kundapura",
+          "village": "Albadi",
+          "surveyNo": "324",
+          "pincode": "576101",
+          "latLang": "13.3409,74.7421",
+          "regDate": "23/12/1965",
+          "lastUpdated": "15/01/2010",
+          "area": "1000 sqyards"
+        }
+      },
+      {
+        "encumbrance": {
+          "monetaryDues": "No",
+          "legalLiability": "No"
+        }
+      },
+      {
+        "deedDetails": {
+          "deedDate": "01/01/2018",
+          "prevOwnerId": "123567891874",
+          "regLocation": "Bellary"
+        }
+      },
+      {
+        "ownerDetails": {
+          "fname": "Abhishek",
+          "lname": "Seth",
+          "aadhar": "658191902734",
+          "pan": "GHSDF6354H",
+          "mobile": "9863527527"
+        }
+      },
+      {
+        "saleDeedRequest": {
+          "buyername": "",
+          "witness": "",
+          "dealdate": "",
+          "dealLoc": ""
+        }
+      }
+    ]
+  }
+}

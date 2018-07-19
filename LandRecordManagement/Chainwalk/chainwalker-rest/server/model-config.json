@@ -1,0 +1,148 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "Land Records Management": {
+    "dataSource": "chainwalkerDataSource",
+    "public": true
+  },
+  "user": {
+    "dataSource": "db",
+    "public": false
+  },
+  "accessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "userCredential": {
+    "dataSource": "db",
+    "public": false
+  },
+  "userIdentity": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "args": {
+    "dataSource": null,
+    "public": false
+  },
+  "block": {
+    "dataSource": null,
+    "public": false
+  },
+  "channel": {
+    "dataSource": null,
+    "public": false
+  },
+  "channelResponse": {
+    "dataSource": null,
+    "public": false
+  },
+  "ChannelQueryResponse": {
+    "dataSource": null,
+    "public": false
+  },
+  "channelID": {
+    "dataSource": null,
+    "public": false
+  },
+  "transactionProposal": {
+    "dataSource": null,
+    "public": false
+  },
+  "ordererResponse": {
+    "dataSource": null,
+    "public": false
+  },
+  "installResult": {
+    "dataSource": null,
+    "public": false
+  },
+  "ProcessedTransaction": {
+    "dataSource": null,
+    "public": false
+  },
+  "peer": {
+    "dataSource": null,
+    "public": false
+  },
+  "PeerOpts": {
+    "dataSource": null,
+    "public": false
+  },
+  "transaction": {
+    "dataSource": null,
+    "public": false
+  },
+  "channelInfo": {
+    "dataSource": null,
+    "public": false
+  },
+  "ChaincodeInfo": {
+    "dataSource": null,
+    "public": false
+  },
+  "ChaincodeInstallRequest": {
+    "dataSource": null,
+    "public": false
+  },
+  "chaincodeInstantiate": {
+    "dataSource": null,
+    "public": false
+  },
+  "ChaincodeQueryResponse": {
+    "dataSource": null,
+    "public": false
+  },
+  "SearchParam": {
+    "dataSource": null,
+    "public": false
+  },
+  "Entity": {
+    "dataSource": null,
+    "public": false
+  },
+  "TxnConfiguration": {
+    "dataSource": null,
+    "public": false
+  },
+  "DeployModelNamerequest": {
+    "dataSource": null,
+    "public": false
+  },
+  "DeployModelrequest": {
+    "dataSource": null,
+    "public": false
+  },
+  "InvokeRequest": {
+    "dataSource": null,
+    "public": false
+  },
+  "registerUserJson": {
+    "dataSource": null,
+    "public": false
+  }
+}

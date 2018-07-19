@@ -1,0 +1,20 @@
+{
+  "name": "channel",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "envelope": {
+      "type": "string",
+      "required": true,
+      "description": "The contents of a generated channel configuration file encoded in base64"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "hidden": ["id"]
+}

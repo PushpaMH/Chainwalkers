@@ -1,0 +1,25 @@
+{
+  "name": "PeerOpts",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "pem": {
+      "type": "string",
+      "required": true,
+      "description": "The pem to use with the peer"
+    },
+    "ssl-target-name-override": {
+      "type": "string",
+      "required": false,
+      "description": "Optional override for use in test environments"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "hidden": ["id"]
+}

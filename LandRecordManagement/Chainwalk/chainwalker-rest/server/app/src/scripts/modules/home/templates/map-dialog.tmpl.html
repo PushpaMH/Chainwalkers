@@ -1,0 +1,23 @@
+<md-dialog id="obj-dialog" aria-label="view on map">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>pid - {{data.record.EntId}} location</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="images/icons/cross.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="dialog-map" style="height:400px; width:500px; display:block;">
+      </div>
+    </md-dialog-content>
+
+    <!-- <md-dialog-actions layout="row">
+
+      <md-button ng-click="onDone()">
+        Done
+      </md-button>
+    </md-dialog-actions> -->
+</md-dialog>

@@ -1,0 +1,26 @@
+{
+  "name": "DeployModelNamerequest",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+
+  "properties": {
+    "modelName": {
+      "type": "string",
+      "default": "SampleChainwalkerModel",
+      "required": true
+    },
+    "deployAsModelName": {
+      "type": "string",
+      "default": "TrialChainwalkerModel",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "hidden": ["id"]
+}

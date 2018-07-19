@@ -1,0 +1,25 @@
+{
+  "name": "registerUserJson",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "username":{
+      "type": "string",
+      "required": true,
+      "default" : "xyz"
+    },
+    "password":{
+      "type": "string",
+      "required": true,
+      "default" : "xyz123"
+    }
+    },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "hidden": ["id"]
+}

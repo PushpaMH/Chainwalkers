@@ -1,0 +1,61 @@
+<md-dialog id="obj-dialog" aria-label="Add Object">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{data.type}} details</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="images/icons/cross.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <md-card>
+        <md-toolbar class="md-table-toolbar md-default">
+          <div class="md-toolbar-tools">
+            <span>pid - {{data.history[0].EntId}} history</span>
+            <div flex></div>
+          </div>
+        </md-toolbar>
+        <md-table-container>
+          <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" md-progress="promise">
+            <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+              <tr md-row>
+                <th md-column ><span>Property Id</span></th>
+                <th md-column><span>Survey No</span></th>
+                <th md-column ><span>Owner</span></th>
+                <th md-column><span>Reg Date</span></th>
+                <th md-column><span>Area</span></th>
+              </tr>
+            </thead>
+            <tbody md-body>
+              <tr md-row md-select="invoice" md-on-select="logItem" md-auto-select="options.autoSelect" ng-repeat="record in data.history">
+                <td md-cell>
+                  {{record.EntId}}
+                </td>
+                <td md-cell>
+                  {{record.SubEntities[0].bhoomiDetails.surveyNo}}
+                </td>
+                <td md-cell>
+                  {{record.SubEntities[3].ownerDetails.fname}} {{record.SubEntities[3].ownerDetails.lname}}
+                </td>
+                <td md-cell>
+                  {{record.SubEntities[2].deedDetails.deedDate}}
+                </td>
+                <td md-cell>
+                  {{record.SubEntities[0].bhoomiDetails.area}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </md-table-container>
+      </md-card>
+    </md-dialog-content>
+
+    <!-- <md-dialog-actions layout="row">
+
+      <md-button ng-click="onDone()">
+        Done
+      </md-button>
+    </md-dialog-actions> -->
+</md-dialog>

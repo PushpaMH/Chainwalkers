@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Blockchain Portal</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body ng-app="BcPortal" ng-cloak>
+    <div class="page">
+      <!-- header -->
+      <md-toolbar layout="column" class="md-primary top header"  layout-align="center center">
+        <img src="images/icons/gok-logo.png" height="100px" width="100px">
+         <h2 class="md-toolbar-tools">
+           <a href="#/"><span>Land Records Blockchain Portal</span></a>
+         </h2>
+     </md-toolbar>
+     <!-- main body-->
+     <div flex layout="column" class="main" ui-view>
+
+
+     </div>
+     <div layout="row" class="logos" layout-align="center center">
+       <img src="images/icons/hyp.png" height="30px"/>
+     </div>
+  </div>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1NQ87QxaLkQzTbpMzhaUaMHDewuZWHeM&libraries=places"></script>
+  <script async defer src="/bundle.js"> </script>
+</body>
+</html>

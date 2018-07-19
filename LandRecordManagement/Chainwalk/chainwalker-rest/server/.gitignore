@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+model
+logs
+go/pmechainwalk/pmechainwalk
+go/pmechainwalk/vendor/github.com/hyperledger/fabric/
+npm-debug.log
+
+go/src/github.com/pmechainwalk/pmechainwalk

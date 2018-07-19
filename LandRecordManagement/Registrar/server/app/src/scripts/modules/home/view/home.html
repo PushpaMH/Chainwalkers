@@ -1,0 +1,50 @@
+<div ng-cloak>
+ <md-content>
+   <md-subheader class="md-primary">Property List</md-subheader>
+   <md-card  ng-repeat="record in recordsResultsByAadhar">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">PID - {{record.EntId}}</span>
+            <span class="md-subhead">Survey Number -{{record.SubEntities[0].bhoomiDetails.surveyNo}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="home.initiateTransfer(record)">Begin Transfer</md-button>
+        </md-card-actions>
+    </md-card>
+    <md-content layout-padding ng-show="showTform">
+      <div>
+            <form name="transferForm">
+
+              <div layout-gt-xs="row">
+                <md-input-container class="md-block" flex-gt-xs>
+                  <label>Buyer Name</label>
+                  <input ng-model="sdreq.buyer">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-xs>
+                  <label>Witness Name</label>
+                  <input ng-model="sdreq.witness">
+                </md-input-container>
+              </div>
+
+              <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Deal Date</label>
+                  <input ng-model="sdreq.dd">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                  <label>Deal Location</label>
+                  <input ng-model="sdreq.dl">
+                </md-input-container>
+              </div>
+            </div>
+
+            <div layout="row">
+              <md-button type="submit" ng-click="home.submitTransferData()" ng-disabled="disableButton">Submit</md-button>
+            </div>
+          </form>
+    </md-content>
+ </md-content>
+</div>

@@ -1,0 +1,65 @@
+{
+   "district":"",
+   "taluk":"",
+   "hobli":"",
+   "village":"",
+   "surveyNumber":"",
+   "lastUpdated":"",
+   "ownerName":{
+     "fistName":"",
+     "middleName":"",
+     "lastName":""
+   },
+   "mobileNumber" : "",
+   "aadhaarNumber":"",
+   "subRegistrar":{
+      "status":"",
+      "lastUpdated":"",
+      "comments":"",
+      "attachments":[
+         {
+            "name":"",
+            "link":""
+         }
+      ]
+   },
+   "bbmp":{
+      "mutationStatus":"",
+      "comments":"",
+      "lastUpdated":"",
+      "processingHistory": [
+        {
+          "action": "",
+          "comments": ""
+        }
+      ],
+      "attachments":[
+         {
+            "name":"",
+            "link":""
+         }
+      ]
+   },
+   "bescom":{
+      "status":"",
+      "lastUpdated":"",
+      "comments":"",
+      "attachments":[
+         {
+            "name":"",
+            "link":""
+         }
+      ]
+   },
+   "it":{
+      "status":"",
+      "lastUpdated":"",
+      "comments":"",
+      "attachments":[
+         {
+            "name":"",
+            "link":""
+         }
+       ]
+   }
+}

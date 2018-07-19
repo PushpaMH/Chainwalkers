@@ -1,0 +1,51 @@
+{
+  "Entity": {
+    "EntName": "Entity",
+    "EntId": "12_275_192",
+    "SubEntities": [{
+        "bhoomiDetails": {
+          "village": "Bandri",
+          "hobli": "Choranuru",
+          "taluk": "Sandur",
+          "district": "Bellary",
+          "surveyNo": "101",
+          "pincode": "583124",
+          "latLang": "14.9905,76.4520",
+          "regDate": "01/01/2018",
+          "lastUpdated": "15/01/2018",
+          "area": "1000 sqyards"
+        }
+      },
+      {
+        "encumbrance": {
+          "monetaryDues": "No",
+          "legalLiability": "No"
+        }
+      },
+      {
+        "deedDetails": {
+          "deedDate": "15/06/2015",
+          "prevOwnerId": "123567891874",
+          "regLocation": "Bellary"
+        }
+      },
+      {
+        "ownerDetails": {
+          "fname": "Soma",
+          "lname": "Naganna",
+          "aadhar": "346891078190",
+          "pan": "EGTPN9820M",
+          "mobile": "8126796734"
+        }
+      },
+      {
+        "saleDeedRequest": {
+          "buyername": "",
+          "witness": "",
+          "dealdate": "",
+          "dealLoc": ""
+        }
+      }
+    ]
+  }
+}

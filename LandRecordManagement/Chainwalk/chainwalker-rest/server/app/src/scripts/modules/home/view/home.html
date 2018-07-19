@@ -1,0 +1,264 @@
+<div ng-cloak>
+ <md-content>
+   <md-tabs md-dynamic-height md-border-bottom md-no-pagination>
+
+     <md-tab label="Search on Map">
+       <md-content class="search-panel records map" layout="row" layout-padding>
+          <search-map model="mapModel" callbacks="callbacks"></search-map>
+        </md-content>
+
+
+
+        <md-content>
+          <md-card>
+            <md-progress-linear class="md-warn" md-mode="determinate" value="{{home.pdeterminate}}"
+                      ng-show="home.showprogress"></md-progress-linear>
+          <md-toolbar class="md-table-toolbar md-default">
+            <div class="md-toolbar-tools">
+              <span>Land Records</span>
+              <div flex></div>
+            </div>
+          </md-toolbar>
+          <md-table-container>
+            <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" md-progress="promise">
+              <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                <tr md-row>
+                  <th md-column ><span>Property Id</span></th>
+                  <th md-column><span>Survey No</span></th>
+                  <th md-column ><span>Owner</span></th>
+                  <th md-column><span>Reg Date</span></th>
+                  <th md-column><span>Area</span></th>
+                  <th md-column ><span>Last Updated</span></th>
+                  <th md-column><span>History</span></th>
+                  <th md-column><span>loc</span></th>
+                </tr>
+              </thead>
+              <tbody md-body>
+                <tr md-row md-select="invoice" md-on-select="logItem" md-auto-select="options.autoSelect" ng-repeat="record in recordsResultsByloc | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                  <td md-cell>
+                    {{record.EntId}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[0].bhoomiDetails.surveyNo}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[3].ownerDetails.fname}} {{record.SubEntities[3].ownerDetails.lname}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[2].deedDetails.deedDate}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[0].bhoomiDetails.area}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[0].bhoomiDetails.lastUpdated}}
+                  </td>
+                  <td md-cell>
+                    <md-button class="md-primary status-btn" ng-click="home.openHistoryDialog($event, record)">history</md-button>
+                  </td>
+                  <td md-cell>
+                    <md-button class="md-icon-button" aria-label="location"  ng-click="home.openMapDialog($event, record)">
+                     <md-icon md-svg-icon="images/icons/pin.svg"></md-icon>
+                   </md-button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </md-table-container>
+
+          <md-table-pagination md-limit="query.limit" md-limit-options="locLimitOption" md-page="query.page" md-total="{{recordsResultsByloc.length}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks"></md-table-pagination>
+        </md-card>
+        </md-content>
+
+
+
+     </md-tab>
+
+     <md-tab label="Search by Location details">
+       <md-content class="search-panel " layout="row" layout-padding>
+          <div layout="row" layout-align="center stretch" layout-wrap>
+            <md-input-container class="md-block first">
+              <label>District</label>
+              <input ng-model="recordsSearchQuery.district" ng-click = "recordsSearchQuery.district = ''">
+             </md-input-container>
+
+             <md-input-container class="md-block first">
+               <label>Taluk</label>
+               <input ng-model="recordsSearchQuery.taluk" ng-click = "recordsSearchQuery.taluk = ''">
+              </md-input-container>
+
+              <md-input-container class="md-block first">
+              <label>Hobli</label>
+              <input ng-model="recordsSearchQuery.hobli" ng-click = "recordsSearchQuery.hobli = ''">
+              </md-input-container>
+
+              <md-input-container class="md-block first">
+               <label>Village</label>
+               <input ng-model="recordsSearchQuery.village" ng-click = "recordsSearchQuery.village = ''">
+              </md-input-container>
+
+              <md-input-container class="md-block first">
+                <label>Survey Number</label>
+                <input ng-model="recordsSearchQuery.surveyNo" ng-click = "recordsSearchQuery.surveyNo = ''">
+               </md-input-container>
+
+               <md-input-container class="md-block first">
+                 <label>Property Id</label>
+                 <input ng-model="recordsSearchQuery.pid" ng-click = "recordsSearchQuery.pid = ''">
+                </md-input-container>
+
+
+
+               <md-input-container class="md-block">
+                 <md-button class="search-btn" ng-click="home.performSearchByLocation()">search</md-button>
+               </md-input-container>
+
+          </div>
+        </md-content>
+
+
+
+        <md-content>
+          <md-card>
+            <md-progress-linear class="md-warn" md-mode="determinate" value="{{home.pdeterminate}}"
+                      ng-show="home.showprogress"></md-progress-linear>
+          <md-toolbar class="md-table-toolbar md-default">
+            <div class="md-toolbar-tools">
+              <span>Land Records</span>
+              <div flex></div>
+            </div>
+          </md-toolbar>
+          <md-table-container>
+            <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" md-progress="promise">
+              <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                <tr md-row>
+                  <th md-column ><span>Property Id</span></th>
+                  <th md-column><span>Survey No</span></th>
+                  <th md-column ><span>Owner</span></th>
+                  <th md-column><span>Reg Date</span></th>
+                  <th md-column><span>Area</span></th>
+                  <th md-column ><span>Last Updated</span></th>
+                  <th md-column><span>History</span></th>
+                  <th md-column><span>loc</span></th>
+                </tr>
+              </thead>
+              <tbody md-body>
+                <tr md-row md-select="invoice" md-on-select="logItem" md-auto-select="options.autoSelect" ng-repeat="record in recordsResultsByloc | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                  <td md-cell>
+                    {{record.EntId}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[0].bhoomiDetails.surveyNo}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[3].ownerDetails.fname}} {{record.SubEntities[3].ownerDetails.lname}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[2].deedDetails.deedDate}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[0].bhoomiDetails.area}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[0].bhoomiDetails.lastUpdated}}
+                  </td>
+                  <td md-cell>
+                    <md-button class="md-primary status-btn" ng-click="home.openHistoryDialog($event, record)">history</md-button>
+                  </td>
+                  <td md-cell>
+                    <md-button class="md-icon-button" aria-label="location" ng-click="home.openMapDialog($event, record)">
+                     <md-icon md-svg-icon="images/icons/pin.svg"></md-icon>
+                   </md-button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </md-table-container>
+
+          <md-table-pagination md-limit="query.limit" md-limit-options="locLimitOption" md-page="query.page" md-total="{{recordsResultsByloc.length}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks"></md-table-pagination>
+        </md-card>
+        </md-content>
+
+
+
+     </md-tab>
+     <md-tab label="Search by aadhar number">
+       <md-content class="search-panel records" layout="row" layout-padding>
+          <div layout="row" layout-align="center stretch" layout-wrap>
+            <md-input-container class="md-block">
+              <label>Aadhar number</label>
+              <input ng-model="recordsSearchQuery.aadhar" ng-click="recordsSearchQuery.aadhar = ''">
+             </md-input-container>
+
+             <md-input-container class="md-block">
+               <md-button class="search-btn" ng-click="home.performAadharSearch()">search</md-button>
+             </md-input-container>
+
+          </div>
+        </md-content>
+
+
+
+        <md-content>
+          <md-card>
+            <md-progress-linear class="md-warn" md-mode="determinate" value="{{home.pdeterminate}}"
+                      ng-show="home.showprogress"></md-progress-linear>
+          <md-toolbar class="md-table-toolbar md-default">
+            <div class="md-toolbar-tools">
+              <span>Land Records</span>
+              <div flex></div>
+            </div>
+          </md-toolbar>
+          <md-table-container>
+            <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" md-progress="promise">
+              <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                <tr md-row>
+                  <th md-column ><span>Property Id</span></th>
+                  <th md-column><span>Survey No</span></th>
+                  <th md-column ><span>Owner</span></th>
+                  <th md-column><span>Reg Date</span></th>
+                  <th md-column><span>Area</span></th>
+                  <th md-column ><span>Last Updated</span></th>
+                  <th md-column><span>History</span></th>
+                  <th md-column><span>loc</span></th>
+                </tr>
+              </thead>
+              <tbody md-body>
+                <tr md-row md-select="invoice" md-on-select="logItem" md-auto-select="options.autoSelect" ng-repeat="record in recordsResultsByAadhar | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                  <td md-cell>
+                    {{record.EntId}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[0].bhoomiDetails.surveyNo}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[3].ownerDetails.fname}} {{record.SubEntities[3].ownerDetails.lname}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[2].deedDetails.deedDate}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[0].bhoomiDetails.area}}
+                  </td>
+                  <td md-cell>
+                    {{record.SubEntities[0].bhoomiDetails.lastUpdated}}
+                  </td>
+                  <td md-cell>
+                    <md-button class="md-primary status-btn" ng-click="home.openHistoryDialog($event, record)">history</md-button>
+                  </td>
+                  <td md-cell>
+                    <md-button class="md-icon-button" aria-label="location"  ng-click="home.openMapDialog($event, record)">
+                     <md-icon md-svg-icon="images/icons/pin.svg"></md-icon>
+                   </md-button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </md-table-container>
+
+          <md-table-pagination md-limit="query.limit" md-limit-options="aalimitOptions" md-page="query.page" md-total="{{recordsResultsByAadhar.length}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks"></md-table-pagination>
+        </md-card>
+        </md-content>
+     </md-tab>
+ </md-content>
+</div>

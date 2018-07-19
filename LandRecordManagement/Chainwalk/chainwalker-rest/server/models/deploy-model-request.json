@@ -1,0 +1,556 @@
+{
+  "name": "DeployModelrequest",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+
+  "properties": {
+    "modelName": {
+      "type": "string",
+      "default": "test",
+      "required": true
+    },
+    "model": {
+      "type": "string",
+      "default": {
+        "entityName": "Entity",
+        "types": [
+          {
+            "name": "bhoomiDetails",
+            "fields": [
+              {
+                "id": 1,
+                "name": "village",
+                "label": "village",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 2,
+                "name": "hobli",
+                "label": "hobli",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 3,
+                "name": "taluk",
+                "label": "taluk",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 4,
+                "name": "district",
+                "label": "district",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 5,
+                "name": "surveyNo",
+                "label": "surveyNo",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 6,
+                "name": "pincode",
+                "label": "pincode",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 7,
+                "name": "latLang",
+                "label": "latLang",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": "8",
+                "name": "regDate",
+                "label": "regDate",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": "9",
+                "name": "lastUpdated",
+                "label": "lastUpdated",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 10,
+                "name": "area",
+                "label": "area",
+                "isrequired": false,
+                "type": "STRING"
+              }
+            ]
+          },
+          {
+            "name": "encumbrance",
+            "fields": [
+              {
+                "id": 1,
+                "name": "monetaryDues",
+                "label": "monetaryDues",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 2,
+                "name": "legalLiability",
+                "label": "legalLiability",
+                "isrequired": false,
+                "type": "STRING"
+              }
+            ]
+          },
+          {
+            "name": "deedDetails",
+            "fields": [
+              {
+                "id": 1,
+                "name": "deedDate",
+                "label": "deedDate",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 2,
+                "name": "prevOwnerId",
+                "label": "prevOwnerId",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 3,
+                "name": "currOwnerId",
+                "label": "currOwnerId",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 4,
+                "name": "regLocation",
+                "label": "regLocation",
+                "isrequired": false,
+                "type": "STRING"
+              }
+            ]
+          },
+          {
+            "name": "ownerDetails",
+            "fields": [
+              {
+                "id": 1,
+                "name": "fname",
+                "label": "fname",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 2,
+                "name": "lname",
+                "label": "lname",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 3,
+                "name": "aadhar",
+                "label": "aadhar",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 4,
+                "name": "pan",
+                "label": "pan",
+                "isrequired": false,
+                "type": "STRING"
+              },
+              {
+                "id": 5,
+                "name": "mobile",
+                "label": "mobile",
+                "isrequired": false,
+                "type": "STRING"
+              }
+            ]
+          }
+        ],
+        "instances": [
+          {
+            "name": "bhoomiDetails",
+            "type": "bhoomiDetails"
+          },
+          {
+            "name": "encumbrance",
+            "type": "encumbrance"
+          },
+          {
+            "name": "deedDetails",
+            "type": "deedDetails"
+          },
+          {
+            "name": "ownerDetails",
+            "type": "ownerDetails"
+          }
+        ],
+        "bucketContainers": [
+          {
+            "name": "bucketContainer",
+            "buckets": [
+              {
+                "name": "NameZipBucket",
+                "attributes": [
+                  {
+                    "subEntity": "bhoomiDetails",
+                    "fldname": "pincode",
+                    "matchingattr": "As-is",
+                    "matchingfield": "As-is",
+                    "isanonymenabled": "false",
+                    "matchingfunction": "As-is",
+                    "instance": {
+                      "name": "bhoomiDetails",
+                      "type": "bhoomiDetails"
+                    }
+                  },
+                  {
+                    "subEntity": "ownerDetails",
+                    "fldname": "lname",
+                    "matchingattr": "As-is",
+                    "matchingfield": "As-is",
+                    "isanonymenabled": "false",
+                    "matchingfunction": "As-is",
+                    "instance": {
+                      "name": "ownerDetails",
+                      "type": "ownerDetails"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "IdBucket",
+                "attributes": [
+                  {
+                    "subEntity": "ownerDetails",
+                    "fldname": "aadhar",
+                    "matchingattr": "As-is",
+                    "matchingfield": "As-is",
+                    "isanonymenabled": "false",
+                    "matchingfunction": "As-is",
+                    "instance": {
+                      "name": "ownerDetails",
+                      "type": "ownerDetails"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "required": true
+    },
+    "rawModel": {
+      "type": "string",
+      "default": {
+        "root": {
+          "name": "Entity",
+          "id": 1,
+          "x": 400,
+          "y": 100,
+          "type": "entity",
+          "entityCard": {
+            "name": "Entity"
+          },
+          "connectors": [
+            {
+              "type": "bottomConnector",
+              "id": 10000
+            }
+          ]
+        },
+        "nodes": [
+          {
+            "name": "EntityField",
+            "id": 5,
+            "x": 301,
+            "y": 287,
+            "type": "entityType",
+            "instance": {
+              "name": "bhoomiDetails",
+              "type": "bhoomiDetails"
+            },
+            "connectors": [
+              {
+                "type": "topConnector",
+                "id": 10005
+              },
+              {
+                "type": "bottomConnector",
+                "id": 10006
+              }
+            ]
+          },
+          {
+            "name": "EntityField",
+            "id": 6,
+            "x": 185,
+            "y": 277,
+            "type": "entityType",
+            "instance": {
+              "name": "encumbrance",
+              "type": "encumbrance"
+            },
+            "connectors": [
+              {
+                "type": "topConnector",
+                "id": 10007
+              },
+              {
+                "type": "bottomConnector",
+                "id": 10008
+              }
+            ]
+          },
+          {
+            "name": "EntityField",
+            "id": 7,
+            "x": 435,
+            "y": 290,
+            "type": "entityType",
+            "instance": {
+              "name": "deedDetails",
+              "type": "deedDetails"
+            },
+            "connectors": [
+              {
+                "type": "topConnector",
+                "id": 10009
+              },
+              {
+                "type": "bottomConnector",
+                "id": 10010
+              }
+            ]
+          },
+          {
+            "name": "EntityField",
+            "id": 8,
+            "x": 566,
+            "y": 295,
+            "type": "entityType",
+            "instance": {
+              "name": "ownerDetails",
+              "type": "ownerDetails"
+            },
+            "connectors": [
+              {
+                "type": "topConnector",
+                "id": 10011
+              },
+              {
+                "type": "bottomConnector",
+                "id": 10012
+              }
+            ]
+          },
+          {
+            "name": "Bucket",
+            "id": 10,
+            "x": 340,
+            "y": 479,
+            "type": "bucket",
+            "bucket": {
+              "name": "NameZipBucket",
+              "attributes": [
+                {
+                  "subEntity": "bhoomiDetails",
+                  "fldname": "pincode",
+                  "matchingattr": "As-is",
+                  "matchingfield": "As-is",
+                  "isanonymenabled": "false",
+                  "matchingfunction": "As-is",
+                  "instance": {
+                    "name": "bhoomiDetails",
+                    "type": "bhoomiDetails"
+                  }
+                },
+                {
+                  "subEntity": "ownerDetails",
+                  "fldname": "lname",
+                  "matchingattr": "As-is",
+                  "matchingfield": "As-is",
+                  "isanonymenabled": "false",
+                  "matchingfunction": "As-is",
+                  "instance": {
+                    "name": "ownerDetails",
+                    "type": "ownerDetails"
+                  }
+                }
+              ]
+            },
+            "connectors": [
+              {
+                "type": "topConnector",
+                "id": 10014
+              }
+            ]
+          },
+          {
+            "name": "Bucket",
+            "id": 11,
+            "x": 488,
+            "y": 482,
+            "type": "bucket",
+            "bucket": {
+              "name": "IdBucket",
+              "attributes": [
+                {
+                  "subEntity": "ownerDetails",
+                  "fldname": "aadhar",
+                  "matchingattr": "As-is",
+                  "matchingfield": "As-is",
+                  "isanonymenabled": "false",
+                  "matchingfunction": "As-is",
+                  "instance": {
+                    "name": "ownerDetails",
+                    "type": "ownerDetails"
+                  }
+                }
+              ]
+            },
+            "connectors": [
+              {
+                "type": "topConnector",
+                "id": 10015
+              }
+            ]
+          },
+          {
+            "name": "BucketContainer",
+            "id": 12,
+            "x": 400,
+            "y": 629,
+            "type": "bucketContainer",
+            "bucketContainer": {
+              "name": "bucketContainer",
+              "buckets": [
+                {
+                  "name": "NameZipBucket",
+                  "attributes": [
+                    {
+                      "subEntity": "bhoomiDetails",
+                      "fldname": "pincode",
+                      "matchingattr": "As-is",
+                      "matchingfield": "As-is",
+                      "isanonymenabled": "false",
+                      "matchingfunction": "As-is",
+                      "instance": {
+                        "name": "bhoomiDetails",
+                        "type": "bhoomiDetails"
+                      }
+                    },
+                    {
+                      "subEntity": "ownerDetails",
+                      "fldname": "lname",
+                      "matchingattr": "As-is",
+                      "matchingfield": "As-is",
+                      "isanonymenabled": "false",
+                      "matchingfunction": "As-is",
+                      "instance": {
+                        "name": "ownerDetails",
+                        "type": "ownerDetails"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "IdBucket",
+                  "attributes": [
+                    {
+                      "subEntity": "ownerDetails",
+                      "fldname": "aadhar",
+                      "matchingattr": "As-is",
+                      "matchingfield": "As-is",
+                      "isanonymenabled": "false",
+                      "matchingfunction": "As-is",
+                      "instance": {
+                        "name": "ownerDetails",
+                        "type": "ownerDetails"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "connectors": [
+              {
+                "type": "bottomConnector",
+                "id": 10016
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": 10005,
+            "destination": 10000
+          },
+          {
+            "source": 10007,
+            "destination": 10000
+          },
+          {
+            "source": 10009,
+            "destination": 10000
+          },
+          {
+            "source": 10011,
+            "destination": 10000
+          },
+          {
+            "source": 10014,
+            "destination": 10006
+          },
+          {
+            "source": 10014,
+            "destination": 10012
+          },
+          {
+            "source": 10015,
+            "destination": 10012
+          },
+          {
+            "source": 10014,
+            "destination": 10016
+          },
+          {
+            "source": 10015,
+            "destination": 10016
+          }
+        ]
+      },
+      "required": true,
+      "description": "Optional. From UI need to pass the co-ordinates as well."
+    },
+    "isSaved": {
+      "type": "string",
+      "default": "false",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "hidden": ["id"]
+}

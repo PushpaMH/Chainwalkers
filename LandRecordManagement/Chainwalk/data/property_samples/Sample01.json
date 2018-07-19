@@ -1,0 +1,51 @@
+{
+  "Entity": {
+    "EntName": "Entity",
+    "EntId": "32_235_121",
+    "SubEntities": [{
+        "bhoomiDetails": {
+          "district": "Dharwad",
+          "taluk": "Dharwad",
+          "hobli": "Garaga",
+          "village": "Boguru",
+          "surveyNo": "213",
+          "pincode": "580001",
+          "latLang": "15.4589,75.0078",
+          "regDate": "01/01/2018",
+          "lastUpdated": "15/01/2018",
+          "area": "1000 sqyards"
+        }
+      },
+      {
+        "encumbrance": {
+          "monetaryDues": "No",
+          "legalLiability": "Yes"
+        }
+      },
+      {
+        "deedDetails": {
+          "deedDate": "01/01/2017",
+          "prevOwnerId": "123567891874",
+          "regLocation": "Bellary"
+        }
+      },
+      {
+        "ownerDetails": {
+          "fname": "Soma",
+          "lname": "Naganna",
+          "aadhar": "346891078190",
+          "pan": "EGTPN9820M",
+          "mobile": "8126796734"
+        }
+      },
+      {
+        "saleDeedRequest": {
+          "buyername": "",
+          "witness": "",
+          "dealdate": "",
+          "dealLoc": ""
+        }
+      }
+    ]
+  }
+}
